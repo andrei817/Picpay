@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="PicPay - O banco digital que mais cresce no mundo. Conta gratuita, cartão sem anuidade, investimentos e muito mais.">
+  <title>PicPay | Sua vida com mais pique</title>
+
+  <link rel="icon" type="image/png" href="img/picpay.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg-gradient"></div>
+
+  <header id="header">
+    <div class="logo" id="logoHome">PicPay</div>
+    
+    <!-- Ícone do Menu Hambúrguer (Aparece apenas no mobile) -->
+    <div class="menu-btn" id="menuBtn">
+      <i class="fas fa-bars"></i>
+    </div>
+  
+    <!-- Container agrupando nav e botões para facilitar a responsividade -->
+    <div class="header-content" id="headerContent">
+      <nav id="mainNav">
+        <a data-section="home" class="active">Início</a>
+        <a data-section="cartoes">Cartões</a>
+        <a data-section="investimentos">Investimentos</a>
+        <a data-section="seguranca">Segurança</a>
+      </nav>
+      <div class="header-buttons">
+        <div class="controls-group">
+          <button class="icon-btn" id="darkModeToggle"><i class="fas fa-moon"></i></button>
+          <select class="lang-compact" id="langSelect">
+            <option value="pt">PT</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+          </select>
+        </div>
+        <button class="btn btn-outline" id="loginModalBtn">Entrar</button>
+        <button class="btn btn-primary" id="signupModalBtn">Abrir conta</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MODAL LOGIN/CADASTRO -->
+  <div id="authModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div class="modal-tabs">
+        <div class="modal-tab active" data-tab="login">Entrar</div>
+        <div class="modal-tab" data-tab="signup">Criar conta</div>
+      </div>
+      <div id="loginForm" class="modal-form active">
+        <div class="form-group"><label>E-mail</label><input type="email" id="loginEmail" placeholder="seu@email.com"></div>
+        <div class="form-group"><label>Senha</label><input type="password" id="loginPassword" placeholder="••••••••"></div>
+        <button class="btn btn-primary modal-btn" id="doLoginBtn">Entrar</button>
+        <div class="modal-footer-text" style="text-align:center; margin-top:20px; font-size:13px;">Ainda não tem conta? <a href="#" id="switchToSignup" style="color:var(--primary);">Cadastre-se</a></div>
+      </div>
+      <div id="signupForm" class="modal-form">
+        <div class="form-group"><label>Nome completo</label><input type="text" id="signupName" placeholder="João Silva"></div>
+        <div class="form-group"><label>E-mail</label><input type="email" id="signupEmail" placeholder="seu@email.com"></div>
+        <div class="form-group"><label>Senha</label><input type="password" id="signupPassword" placeholder="••••••••"></div>
+        <div class="form-group"><label>Confirmar senha</label><input type="password" id="signupConfirm" placeholder="••••••••"></div>
+        <button class="btn btn-primary modal-btn" id="doSignupBtn">Criar conta gratuita</button>
+        <div class="modal-footer-text" style="text-align:center; margin-top:20px; font-size:13px;">Já tem conta? <a href="#" id="switchToLogin" style="color:var(--primary);">Faça login</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="home-section" class="hero">
+    <div class="hero-left fade-up">
+      <div class="badge"><span class="badge-dot"></span><span>Verdinho é a nova cor do dinheiro</span></div>
+      <h1>Conta digital <span class="gradient-text">gratuita</span> e cartão sem anuidade</h1>
+      <p>Mais de 67 milhões de brasileiros já escolheram o PicPay. Cartão Verde ou Black, você escolhe. Ambos sem anuidade e com benefícios exclusivos.</p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" id="heroCta">Quero minha conta →</button>
+        <button class="btn btn-outline" id="demoBtn">Saiba mais</button>
+      </div>
+    </div>
+    <div class="card-scene fade-up">
+      <div class="flip-card" id="flipCard">
+        <!-- FRENTE DO CARTÃO -->
+        <div class="card-face card-front card-front-green" id="cardFront">
+          <div class="card-content">
+            <div class="card-header">
+              <div class="card-brand" id="frontBrand">PICPAY GOLD</div>
+              <div class="card-chip-modern"></div>
+            </div>
+            <div class="card-number" id="frontNumber"><span>••••</span>  <span>••••</span>  <span>••••</span>  <span>8847</span></div>
+            <div class="card-footer">
+              <div class="card-expiry"><small>VÁLIDO ATÉ</small><strong>12/30</strong></div>
+              <div class="card-logo"><div class="card-logo-circle"></div><div class="card-logo-circle"></div></div>
+            </div>
+          </div>
+        </div>
+        <!-- VERSO DO CARTÃO -->
+        <div class="card-face card-back card-back-green" id="cardBack">
+          <div class="card-back-content">
+            <div class="card-back-strip"></div>
+            <div class="card-back-cvv-area">
+              <div class="card-back-cvv">***</div>
+            </div>
+            <div class="card-back-footer">
+              <p id="backFooterText">Cartão PicPay Card • Sem Anuidade</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO CARTÕES -->
+  <div class="cards-showcase" id="cartoes-section">
+    <div class="section-header">
+      <div class="section-badge">Escolha seu estilo</div>
+      <h2 class="section-title">Encontre o <span class="gradient-text">PicPay Card</span> perfeito para você</h2>
+      <p>Quatro opções de cartões para o seu perfil. Da isenção total a benefícios premium, escolha o que melhor acompanha o seu momento.</p>
+    </div>
+    <div class="cards-container">
+      <!-- Cartão Verde -->
+    <div class="card-item">
+      <div class="card-green-prof">
+        <div style="display: flex; justify-content: space-between;"><div class="card-brand">PICPAY GOLD</div><div class="card-chip-modern" style="width:45px;height:35px;"></div></div>
+        <div class="card-number" style="font-size: 16px;">•••• •••• •••• 8847</div>
+        <div style="display: flex; justify-content: space-between;"><span style="color:white;">12/30</span><div class="card-logo"><div class="card-logo-circle" style="width:28px;height:28px;"></div><div class="card-logo-circle" style="width:28px;height:28px;"></div></div></div>
+      </div>
+      <div class="card-badge">💚 Sem anuidade • 100% digital</div>
+    </div>
+
+    <!-- Cartão Platinum -->
+    <div class="card-item">
+      <div class="card-platinum-prof">
+        <div style="display: flex; justify-content: space-between;"><div class="card-brand" style="color:#333;">PICPAY PLATINUM</div><div class="card-chip-modern" style="width:45px;height:35px; filter: grayscale(100%);"></div></div>
+        <div class="card-number" style="font-size: 16px; letter-spacing:2px; color:#333;">⭐ PLATINUM</div>
+        <div style="display: flex; justify-content: space-between;"><span style="color:#333;">12/30</span><span style="color:#333; font-weight: bold;">PLATINUM</span></div>
+      </div>
+      <div class="card-badge">⚪ Benefícios Exclusivos • Seguros Mastercard</div>
+    </div>
+
+    <!-- Cartão Black -->
+    <div class="card-item">
+      <div class="card-black-prof">
+        <div style="display: flex; justify-content: space-between;"><div class="card-brand">PICPAY BLACK</div><div class="card-chip-modern" style="width:40px;height:30px;background:rgba(255,255,255,0.15);border-radius:8px;"></div></div>
+        <div class="card-number" style="font-size: 16px; letter-spacing:2px;">⚡ BLACK EDITION</div>
+        <div style="display: flex; justify-content: space-between;"><span style="color:white;">12/30</span><span style="color:white;">INFINITE</span></div>
+      </div>
+      <div class="card-badge">⚫ Cashback 1,2% • Salas VIP</div>
+    </div>
+
+    <!-- Cartão Ultra Black -->
+    <div class="card-item">
+      <div class="card-ultrablack-prof">
+        <div style="display: flex; justify-content: space-between;"><div class="card-brand" style="color:#d4af37;">PICPAY EPIC</div><div class="card-chip-modern" style="width:45px;height:35px;"></div></div>
+        <div class="card-number" style="font-size: 16px; letter-spacing:2px; color:#d4af37;">✨ EXCLUSIVE</div>
+        <div style="display: flex; justify-content: space-between;"><span style="color:#d4af37;">12/30</span><span style="color:#d4af37; font-weight:bold;">ULTRA</span></div>
+      </div>
+      <div class="card-badge">🌟 Até 4% de Cashback • Experiência Máxima</div>
+    </div>
+    </div>
+  </div>
+
+  <div class="benefits-showcase">
+    <div class="benefits-grid">
+      
+      <!-- PicPay Card (Gold/Verde) -->
+      <div class="benefit-card card-green">
+        <div class="benefit-icon">💚</div>
+        <h3>PicPay Card</h3>
+        <p>Cartão internacional sem anuidade, controle total pelo app, limites personalizados e segurança de ponta.</p>
+        <div class="card-tag tag-green">Sem taxas • 100% digital</div>
+      </div>
+  
+      <!-- PicPay Platinum -->
+      <div class="benefit-card card-platinum">
+        <div class="benefit-icon">⚪</div>
+        <h3>PicPay Platinum</h3>
+        <p>Limite de até R$10 mil, 0,5% de cashback que rende 102% do CDI, seguro médico e até 3 cartões adicionais.</p>
+        <div class="card-tag tag-platinum">Mais limite • Seguros</div>
+      </div>
+  
+      <!-- PicPay Black -->
+      <div class="benefit-card card-black">
+        <div class="benefit-icon">⚫</div>
+        <h3>PicPay Black</h3>
+        <p>Cashback de 1,2% em todas as compras, acesso a salas VIP em aeroportos e atendimento prioritário 24/7.</p>
+        <div class="card-tag tag-black">Cashback • Salas VIP</div>
+      </div>
+  
+      <!-- PicPay Epic -->
+      <div class="benefit-card card-epic">
+        <div class="benefit-icon">🌟</div>
+        <h3>PicPay Epic</h3>
+        <p>Até 4% de cashback, experiência máxima, acessos ilimitados e os maiores benefícios do mercado para você.</p>
+        <div class="card-tag tag-epic">Exclusivo • Premium</div>
+      </div>
+  
+    </div>
+  </div>
+
+  <section id="investimentos-section"><div class="section-header"><div class="section-badge">Rendimento real</div><h2 class="section-title">Invista com <span class="gradient-text">102% do CDI</span></h2></div>
+    <div class="features-grid"><div class="feature-card"><div class="feature-icon">💰</div><h3>Reserva Imediata</h3><p>Rendimento diário 102% do CDI com liquidez instantânea.</p></div>
+    <div class="feature-card"><div class="feature-icon">📊</div><h3>Investimentos completos</h3><p>Ações, fundos, Tesouro Direto sem taxas escondidas.</p></div>
+    <div class="feature-card"><div class="feature-icon">🎯</div><h3>Cofrinhos inteligentes</h3><p>Crie metas e organize seu dinheiro com rendimento automático.</p></div></div></section>
+
+  <section id="seguranca-section"><div class="section-header"><div class="section-badge">Tecnologia de ponta</div><h2 class="section-title">Seus dados <span class="gradient-text">100% seguros</span></h2></div>
+    <div class="features-grid"><div class="feature-card"><div class="feature-icon">🔑</div><h3>Criptografia avançada</h3><p>Dados protegidos com padrão internacional.</p></div>
+    <div class="feature-card"><div class="feature-icon">📱</div><h3>Autenticação biométrica</h3><p>Acesso seguro com digital ou Face ID.</p></div>
+    <div class="feature-card"><div class="feature-icon">🔔</div><h3>Alertas em tempo real</h3><p>Notificações de todas as movimentações.</p></div></div></section>
+
+  <div id="stats-container"><section><div class="section-header"><div class="section-badge">Números que impressionam</div><h2 class="section-title">Mais de 67M de brasileiros <span class="gradient-text">escolheram</span></h2></div>
+    <div class="stats-grid"><div class="stat-card"><div class="stat-number" data-target="67">0</div><div class="stat-label">milhões de clientes</div></div>
+    <div class="stat-card"><div class="stat-number" data-target="99.99">0</div><div class="stat-label"> disponibilidade</div></div>
+    <div class="stat-card"><div class="stat-number" data-target="550">0</div><div class="stat-label"> transações/mês</div></div>
+    <div class="stat-card"><div class="stat-number" data-target="4.7">0</div><div class="stat-label">★ Play Store</div></div></div></section></div>
+
+  <div class="cta-section fade-up"><h2>Junte-se a mais de 67 milhões</h2><p>Abra sua conta em menos de 5 minutos. Escolha seu cartão: Verde ou Black.</p><button class="btn btn-cta" id="ctaButton">Quero ser PicPay →</button></div>
+
+  <footer><div class="footer-grid"><div class="footer-col"><h4>Produtos</h4><a data-footer="home">Conta digital</a><a data-footer="cartoes">Cartões</a></div>
+    <div class="footer-col"><h4>Empresa</h4><a href="https://blog.picpay.com/o-que-e-picpay/">Sobre o PicPay</a></div><div class="footer-col"><h4>Ajuda</h4><a href="https://meajuda.picpay.com/hc/pt-br">Central de ajuda</a></div></div>
+    <div class="footer-bottom">© 2026 PicPay - Feito com 💚 - Todos os direitos reservados.</div></footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
